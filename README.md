@@ -10,9 +10,9 @@ Tailwind CSSを適用させたElectronをビルドしたい
 - [x] Tailwind CSS動作確認
   - [x] 起動確認
   - [x] ビルド確認
-- [ ] Flowbite動作確認
+- [x] Flowbite動作確認
   - [x] 起動確認
-  - [ ] ビルド確認
+  - [x] ビルド確認
 - [ ] 自動ビルド環境構築
 
 ## 参考資料
