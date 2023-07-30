@@ -13,6 +13,9 @@ Tailwind CSSを適用させたElectronをビルドしたい
 - [x] Flowbite動作確認
   - [x] 起動確認
   - [x] ビルド確認
+- [ ] React Router動作確認
+  - [ ] 起動確認
+  - [ ] ビルド確認
 - [ ] 自動ビルド環境構築
 
 ## 参考資料
