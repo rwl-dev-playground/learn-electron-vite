@@ -17,4 +17,5 @@ await fs.writeJson('./package.json', newPackageJson)
 await $`rome format package.json --write`
 await $`git add ./package.json`
 await $`git commit -m "ci: release v${newVersion}"`
+await $`git tag -a v${newVersion} -m "ci: add tag v${newVersion}"`
 await $`git push && git push --tags`
