@@ -38,7 +38,6 @@ jobs:
           echo "PREVIOUS_TAG: $env:PREVIOUS_TAG"
           echo SEMVER=$(PREVIOUS_TAG//$'v'/'') >> $env:GITHUB_ENV
           echo "SEMVER: $env:SEMVER"
-          echo ::set-output name=semver::$SEMVER
           echo "semver=$env:SEMVER" >> $GITHUB_OUTPUT
 
       - name: Archive production artifacts
