@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import { Button } from 'flowbite-react';
-import { RouteLink } from '../components/RouteLink';
-import reactLogo from '../assets/react.svg'
-import viteLogo from '/electron-vite.animate.svg'
-import { LinkList } from '../components/LinkList';
+import { useState } from "react";
+import { Button } from "flowbite-react";
+import { RouteLink } from "../components/RouteLink";
+import reactLogo from "../assets/react.svg";
+import viteLogo from "/electron-vite.animate.svg";
+import { LinkList } from "../components/LinkList";
 
 export const TopPage = () => {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -19,7 +19,7 @@ export const TopPage = () => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1 className='text-3xl font-bold'>Vite + React</h1>
+      <h1 className="text-3xl font-bold">Vite + React</h1>
       <div className="card">
         <Button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -33,5 +33,5 @@ export const TopPage = () => {
       </p>
       <RouteLink to="/second">SecondPage.tsxに遷移</RouteLink>
     </>
-  )
-}
+  );
+};
