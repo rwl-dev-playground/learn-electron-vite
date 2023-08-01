@@ -36,7 +36,7 @@ jobs:
         run: |
           PREVIOUS_TAG=$(git describe --tags --abbrev=0)
           echo "PREVIOUS_TAG: $PREVIOUS_TAG"
-          SEMVER=$($PREVIOUS_TAG//$'v'/'')
+          SEMVER=$($PREVIOUS_TAG | sed -e 's/v//')
           echo "SEMVER: $SEMVER"
           echo "semver=$SEMVER" >> $GITHUB_OUTPUT
         shell: bash
