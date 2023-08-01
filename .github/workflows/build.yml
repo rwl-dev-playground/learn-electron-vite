@@ -1,0 +1,48 @@
+name: Build
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-latest]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v1
+
+      - name: Setup node env
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: true
+
+      - name: Build application
+        run: pnpm build
+
+      - name: Get latest tag
+        id: latest_tag
+        run: |
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0)
+          echo "PREVIOUS_TAG: $PREVIOUS_TAG"
+          SEMVER=$(PREVIOUS_TAG//$'v'/'')
+          echo "SEMVER: $SEMVER"
+          echo ::set-output name=semver::$SEMVER
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: editor-${{ steps.latest_tag.outputs.semver }}
+          path: release/${{ steps.latest_tag.outputs.semver }}
+          retention-days: 30
