@@ -34,11 +34,12 @@ jobs:
       - name: Get latest tag
         id: latest_tag
         run: |
-          PREVIOUS_TAG=$(git describe --tags --abbrev=0)
-          echo "PREVIOUS_TAG: $PREVIOUS_TAG"
-          SEMVER=$(PREVIOUS_TAG//$'v'/'')
-          echo "SEMVER: $SEMVER"
+          echo PREVIOUS_TAG=$(git describe --tags --abbrev=0) >> $env:GITHUB_ENV
+          echo "PREVIOUS_TAG: $env:PREVIOUS_TAG"
+          echo SEMVER=$(PREVIOUS_TAG//$'v'/'') >> $env:GITHUB_ENV
+          echo "SEMVER: $env:SEMVER"
           echo ::set-output name=semver::$SEMVER
+          echo "semver=$env:SEMVER" >> $GITHUB_OUTPUT
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
