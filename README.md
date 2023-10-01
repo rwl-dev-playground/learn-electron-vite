@@ -16,14 +16,14 @@ Tailwind CSSを適用させたElectronをビルドしたい
 - [x] React Router動作確認
   - [x] 起動確認
   - [x] ビルド確認
-- [ ] 自動ビルド環境構築
-  - [ ] [`zx`](https://github.com/google/zx)によるタグ付けスクリプトの作成
+- [x] 自動ビルド環境構築
+  - [x] [`zx`](https://github.com/google/zx)によるタグ付けスクリプトの作成
     - 入力されたバージョンのバリデーション（現行バージョンより下や規則に沿ってない入力を弾く）
     - `package.json`のバージョン書き換え
     - `package.json`変更の自動commit
     - タグづけcommitの自動作成
     - 自動での`git push`
-  - [ ] タグ付け起因で動作する自動ビルド環境構築
+  - [x] タグ付け起因で動作する自動ビルド環境構築
 
 ## 参考資料
 - 特になし
